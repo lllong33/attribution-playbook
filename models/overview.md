@@ -8,7 +8,7 @@ Note that this project is not a package -- it is not intended to be installed in
 your own dbt project, but instead provides a good starting point for building
 similar data models for your own business.
 
-The SQL in this project is compatible with Snowflake¹.
+The SQL in this project is compatible with postgres.
 
 If you want to run this project yourself to play with it (assuming you have
 dbt installed):

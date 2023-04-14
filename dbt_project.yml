@@ -1,15 +1,14 @@
 name: acme
 
+config-version: 2
+version: '0.1'
+
 profile: playbook
 
-version: '1.0'
-
-require-dbt-version: ">=0.16.0"
-
-source-paths: ["models"]
+model-paths: ["models"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
-data-paths: ["data"]
+seed-paths: ["data"]
 macro-paths: ["macros"]
 
 target-path: "target"
@@ -17,13 +16,10 @@ clean-targets:
     - "target"
     - "dbt_modules"
 
-quoting:
-  database: false
-  identifier: false
-  schema: false
-
-seeds:
-  quote_columns: false
-
 models:
-  transient: true
+  playbook:
+    materialized: table
+    stging:
+      materialized: view
+  # transient: true
+
